@@ -5,6 +5,7 @@ Note: The code was not written as efficiently, thus several files has to run con
 
 Contents: Excel file, "GR Hermanus (22796002)", containing the data fed to the code in the sheet - "AllData"
 	  "Data_extraction_and_structuring" takes the data and structures it in a tensor format. It does interpolation in the form of spline to obtain the binary speed of sound data in intervals of 0.1 form 0 to 1 
+	  "Compositional_fit" performs the spline interpolation for the "Data_extraction_ans_struturing". This file is calles within the "Data_extraction_ans_struturing" file 
           "Optimal_rank_using_LOOCV_smaller_subset_mfile" performs the LOOCV on a subset of the data based on the functional groups. These should be changed manually and the number of initial guesses, centring procedures and the ranks to evaulate.
 	  "Plot_LOOCV_results" processes the data from the LOOCV and plots several plots of interest. These plots are used to obtain the optimal parameters.
           "Parity_plots_LOOCV" plots the LOOCV and experimental results for the optimal conditions. The index for the optimal conditions has to be changed manually.
