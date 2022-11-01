@@ -1,0 +1,25 @@
+GR Hermanus - Skripsie code
+Decsription: The itterative PCA algorithm was employed for matrix completion of speed of sound data. 
+
+Note: The code was not written as efficiently, thus several files has to run consecutuvely. The code also saves files and writes to several excel files. Comment out the parts weher it saves plots if you not want it saved.
+
+Contents: Excel file, "GR Hermanus (22796002)", containing the data fed to the code in the sheet - "AllData"
+	  "Data_extraction_and_structuring" takes the data and structures it in a tensor format. It does interpolation in the form of spline to obtain the binary speed of sound data in intervals of 0.1 form 0 to 1 
+          "Optimal_rank_using_LOOCV_smaller_subset_mfile" performs the LOOCV on a subset of the data based on the functional groups. These should be changed manually and the number of initial guesses, centring procedures and the ranks to evaulate.
+	  "Plot_LOOCV_results" processes the data from the LOOCV and plots several plots of interest. These plots are used to obtain the optimal parameters.
+          "Parity_plots_LOOCV" plots the LOOCV and experimental results for the optimal conditions. The index for the optimal conditions has to be changed manually.
+	  "SVD_and_Matrix_Completion" performs the MCM algorithm based on the optimal parameters for the given subset.
+	  "Restructuring_of _itterated_real" restructured the data from the tensor form into a form acceptable for writing to excel.
+	  "plot_SAFT_and_MCM" plots and saves the MCM vs SAFT predictions. The second section of the code plots the experimental data and SAFT predictions.
+
+Code to run consecatively: 1."Optimal_rank_using_LOOCV_smaller_subset_mfile"           Input required: Type of functional groups to consider, the intial guess, centring and number of ranks 
+		           2."Plot_LOOCV_results"				       Input required: NA
+			   3."Parity_plots_LOOCV"                                      Input required: Index for the optimal parameters
+                           4."SVD_and_Matrix_Completion"			       Input required: NA 
+                           5."Restructuring_of _itterated_real"			       Input required: NA
+                           6."plot_SAFT_and_MCM"				       Input required: NA
+
+Additional contents: Results for the LOOCV as per the report are given as a mat file. The results should be loaded and the code from number 2 onwards should be run
+		     Additional code to check whether the code does what it should was included
+		      
+ 
